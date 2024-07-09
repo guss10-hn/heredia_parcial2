@@ -82,12 +82,14 @@
             event.preventDefault();
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-            const correctUsername = 'ingreyeslara';
-            const correctPassword = 'Utd_2024';
+            const users = {
+                'ingreyeslara': 'Utd_2024',
+                'examen_parcial2': 'Voyporel100'
+            };
 
-            if (username === correctUsername && password === correctPassword) {
+            if (users[username] && users[username] === password) {
                 localStorage.setItem('loggedIn', 'true');
-                window.location.href = 'https://guss10hn.projectsutd.online/pp/index.html';
+                window.location.href = 'https://guss10hn.projectsutd.online/unidad1';
             } else {
                 document.getElementById('error').style.display = 'block';
             }
